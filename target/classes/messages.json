@@ -1,0 +1,166 @@
+{
+  "prefix": "&8[&bWarps&8] &r",
+  "general": {
+    "no-permission": "{prefix}&cVous n'avez pas la permission.",
+    "players-only": "{prefix}&cCette commande est réservée aux joueurs.",
+    "unknown-command": "{prefix}&cCommande inconnue. Faites &f/{label} help&c.",
+    "usage": "{prefix}&cUsage : &f/{label} {usage}",
+    "error": "{prefix}&cUne erreur est survenue, prévenez un administrateur.",
+    "unknown-player": "{prefix}&cJoueur introuvable : &f{player}",
+    "invalid-number": "{prefix}&c« {input} » n'est pas un nombre valide.",
+    "save-error": "{prefix}&cImpossible d'enregistrer {file} : {error}",
+    "reload-done": "{prefix}&aConfiguration rechargée ({warps} warp(s)).",
+    "reload-problems": "{prefix}&c{count} problème(s) détecté(s) :",
+    "reload-problem": "&8- &c{problem}"
+  },
+  "help": {
+    "header": "&3&m-------&r &bKoriaWarps &3&m-------",
+    "line": "&b/{command} &7{usage} &8- &f{description}",
+    "admin-line": "&b/{command} &7{usage} &8- &f{description}",
+    "footer": "&3&m-----------------------------",
+    "commands": {
+      "warp": {
+        "usage": "[warp] [player]",
+        "description": "Se téléporter à un warp (sans argument : menu)."
+      },
+      "warps": {
+        "usage": "",
+        "description": "Liste des warps."
+      },
+      "spawn": {
+        "usage": "[player]",
+        "description": "Retourner au spawn, depuis n'importe quel monde."
+      },
+      "setwarp": {
+        "usage": "<name> [permission|auto|none]",
+        "description": "Crée le warp ici (ou le déplace ici)."
+      },
+      "delwarp": {
+        "usage": "<warp>",
+        "description": "Supprime un warp."
+      },
+      "editwarp": {
+        "usage": "<warp> <name|permission|icon|description|price|hidden|move|rename|info> [value]",
+        "description": "Modifie un warp."
+      },
+      "setspawn": {
+        "usage": "[global|world]",
+        "description": "Définit le spawn du serveur (ou de ce monde) ici."
+      },
+      "delspawn": {
+        "usage": "<global|world> [world]",
+        "description": "Supprime le spawn du serveur ou d'un monde."
+      },
+      "koriawarps": {
+        "usage": "<help|info|spawns|config|reload>",
+        "description": "Administration de KoriaWarps."
+      }
+    }
+  },
+  "warp": {
+    "unknown": "{prefix}&cLe warp &f{warp} &cn'existe pas. Liste : &f/{warps}",
+    "no-permission": "{prefix}&cVous n'avez pas accès au warp {destination}&c.",
+    "teleported": "{prefix}&aTéléporté à {destination}&a.",
+    "sent-other": "{prefix}&f{player} &aa été téléporté à {destination}&a.",
+    "invalid-name": "{prefix}&cNom de warp invalide : &f{warp} &c(lettres, chiffres, - et _, 32 caractères au plus).",
+    "name-taken": "{prefix}&cLe warp &f{warp} &cexiste déjà.",
+    "created": "{prefix}&aWarp &f{warp} &acréé ici. Permission : &f{permission}",
+    "moved": "{prefix}&aWarp &f{warp} &adéplacé ici. Permission : &f{permission}",
+    "deleted": "{prefix}&aWarp &f{warp} &asupprimé.",
+    "renamed": "{prefix}&aWarp &f{warp} &arenommé en &f{nouveau}&a."
+  },
+  "edit": {
+    "done": "{prefix}&aWarp &f{warp} &8» &f{option} &a= &f{value}",
+    "unknown-option": "{prefix}&cOption inconnue : &f{option}&c. Options : &f{options}",
+    "missing-value": "{prefix}&cIndiquez une valeur : &f/editwarp {warp} {option} <value>",
+    "icon-hand": "{prefix}&cTenez en main l'objet à utiliser comme icône."
+  },
+  "spawn": {
+    "name": "&6le spawn",
+    "teleported": "{prefix}&aBienvenue au spawn !",
+    "sent-other": "{prefix}&f{player} &aa été téléporté au spawn.",
+    "not-set": "{prefix}&cAucun spawn n'est défini.",
+    "set-global": "{prefix}&aSpawn du serveur défini : &f{position}",
+    "set-world": "{prefix}&aSpawn du monde &f{monde} &adéfini : &f{position}",
+    "per-world-disabled": "{prefix}&eLes spawns par monde sont désactivés (config.json : spawn.par-monde) : ce spawn ne sera utilisé qu'une fois l'option activée.",
+    "removed-global": "{prefix}&aSpawn du serveur supprimé.",
+    "removed-world": "{prefix}&aSpawn du monde &f{monde} &asupprimé.",
+    "no-world-spawn": "{prefix}&cLe monde &f{monde} &cn'a pas de spawn propre.",
+    "void": "[actionbar]&eVous êtes tombé dans le vide : retour au spawn."
+  },
+  "teleport": {
+    "warmup": "{prefix}&7Téléportation vers {destination} &7dans &f{secondes} s&7. Ne bougez pas !",
+    "countdown": "[actionbar]&7Téléportation vers {destination} &7dans &f{secondes} s&7...",
+    "cancelled-move": "{prefix}&cTéléportation annulée : vous avez bougé.",
+    "cancelled-damage": "{prefix}&cTéléportation annulée : vous avez pris des dégâts.",
+    "cooldown": "{prefix}&cAttendez encore &f{temps} &cavant de vous téléporter.",
+    "too-poor": "{prefix}&cIl vous faut &f{prix} $ &cpour aller à {destination}&c.",
+    "paid": "{prefix}&7{prix} $ ont été retirés de votre compte.",
+    "world-not-loaded": "{prefix}&cLe monde &f{monde} &cde {destination} &cn'est pas chargé.",
+    "failed": "{prefix}&cLa téléportation vers {destination} &ca été refusée."
+  },
+  "menu": {
+    "price": "&e{prix} $",
+    "tooltip-world": "&7Monde : &f{monde}",
+    "tooltip-price": "&7Prix : {prix}",
+    "tooltip-open": "&eClic : se téléporter",
+    "tooltip-locked": "&cVerrouillé",
+    "chat-header": "&3&m-------&r &bWarps &7({count}) &3&m-------",
+    "chat-entry": "&8» {destination} &8- &7{prix} &8(&7cliquez&8)",
+    "chat-entry-locked": "&8» &8&m{warp}&r &c(verrouillé)",
+    "chat-footer": "&3&m-----------------------------",
+    "chat-empty": "{prefix}&7Aucun warp pour le moment."
+  },
+  "info": {
+    "warp": [
+      "&3&m-------&r {destination} &7({warp}) &3&m-------",
+      "&7Position : &f{position} &8(monde chargé : {charge}&8)",
+      "&7Permission : &f{permission}",
+      "&7Prix : &f{prix} &8| &7Caché : {cache}",
+      "&7Icône : &f{icone}",
+      "&7Créé par &f{auteur} &7le &f{date}",
+      "&7Description :"
+    ],
+    "warp-description": "&8 » &f{ligne}",
+    "spawns": ["&3&m-------&r &bSpawns &3&m-------", "&7Mode : &f{mode}", "&7Spawn du serveur : &f{global}"],
+    "spawn-world": "&7Monde &f{monde} &8» &f{position}"
+  },
+  "values": {
+    "yes-text": "&aOui",
+    "no-text": "&cNon",
+    "none": "aucune",
+    "free": "&aGratuit",
+    "per-world": "un spawn par monde (spawn du serveur pour les autres)",
+    "global-only": "un seul spawn pour tout le serveur"
+  },
+  "time": {
+    "days": "j",
+    "hours": "h",
+    "minutes": "min",
+    "seconds": "s",
+    "now": "maintenant",
+    "never": "jamais"
+  },
+  "config-editor": {
+    "cancel-word": "annuler",
+    "empty-word": "vide",
+    "prompt": "{prefix}&eÉcrivez la nouvelle valeur de &f{path} &edans le chat (&f{empty} &epour une valeur vide, &f{cancel} &epour annuler).",
+    "prompt-current": "&7Valeur actuelle : &f",
+    "prompt-list-add": "{prefix}&eÉcrivez la valeur à ajouter à &f{path} &e(&f{cancel} &epour annuler).",
+    "prompt-list-replace": "{prefix}&eÉcrivez toutes les valeurs de &f{path}&e, séparées par des virgules (&f{cancel} &epour annuler).",
+    "prompt-add": "{prefix}&eÉcrivez le nom de la nouvelle entrée de &f{path} &e(&f{cancel} &epour annuler).",
+    "cancelled": "{prefix}&7Modification annulée.",
+    "saved": "{prefix}&a{file} : &f{path} &a= &f{value}",
+    "reset": "{prefix}&a{file} : &f{path} &areprend sa valeur par défaut.",
+    "removed": "{prefix}&a{file} : &f{path} &asupprimé.",
+    "added": "{prefix}&a{file} : &f{path} &aajouté.",
+    "confirm-remove": "{prefix}&eRefaites Ctrl + Q dans les 5 secondes pour confirmer (&f{path}&e).",
+    "invalid-number": "{prefix}&c« {input} » n'est pas un nombre.",
+    "invalid-key": "{prefix}&cNom invalide : lettres, chiffres, - _ et : uniquement.",
+    "exists": "{prefix}&cL'entrée &f{key} &cexiste déjà.",
+    "empty-section": "{prefix}&cSection vide : ajoutez la première entrée dans le fichier.",
+    "save-error": "{prefix}&cImpossible d'enregistrer {file} : {error}",
+    "restart": "{prefix}&eCe réglage sera appliqué au prochain redémarrage du serveur.",
+    "unknown-file": "{prefix}&cFichier inconnu : &f{file}&c. Fichiers : config, warps, spawns, messages, menus."
+  }
+}

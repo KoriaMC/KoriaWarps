@@ -1,0 +1,66 @@
+name: KoriaWarps
+version: 1.0.0
+main: fr.koriamc.warps.KoriaWarps
+author: KoriaMC
+description: Warps (permissions par warp) et spawn multi-mondes pour KoriaMC (Spigot 1.8.8)
+softdepend: [Vault, KoriaMultiverse]
+
+# Les commandes (/warp, /warps, /spawn, /setwarp, /delwarp, /editwarp, /setspawn, /delspawn,
+# /koriawarps) et leurs alias sont enregistrés dynamiquement depuis config.json : ils ne
+# sont donc pas déclarés ici.
+
+permissions:
+  koriawarps.*:
+    description: Accès complet à KoriaWarps
+    default: op
+    children:
+      koriawarps.player: true
+      koriawarps.admin: true
+      koriawarps.warp.*: true
+      koriawarps.bypass.*: true
+  koriawarps.player:
+    description: Commandes joueur (les nœuds exacts sont définis dans config.json)
+    default: true
+  koriawarps.admin:
+    description: Commandes d'administration (les nœuds exacts sont définis dans config.json)
+    default: op
+    children:
+      koriawarps.command.warp.others: true
+      koriawarps.command.spawn.others: true
+      koriawarps.admin.info: true
+      koriawarps.admin.config: true
+      koriawarps.admin.reload: true
+  koriawarps.command.warp.others:
+    description: Téléporter un autre joueur à un warp (/warp <warp> <player>)
+    default: op
+  koriawarps.command.spawn.others:
+    description: Téléporter un autre joueur au spawn (/spawn <player>)
+    default: op
+  koriawarps.admin.info:
+    description: /koriawarps info <warp> et /koriawarps spawns
+    default: op
+  koriawarps.admin.config:
+    description: Éditeur de configuration en jeu (/koriawarps config)
+    default: op
+  koriawarps.admin.reload:
+    description: Recharger la configuration (/koriawarps reload)
+    default: op
+  koriawarps.warp.*:
+    description: Accès à tous les warps, quelle que soit leur permission
+    default: op
+  koriawarps.bypass.*:
+    description: Pas de délai, d'attente ni de prix pour les téléportations
+    default: op
+    children:
+      koriawarps.bypass.delay: true
+      koriawarps.bypass.cooldown: true
+      koriawarps.bypass.price: true
+  koriawarps.bypass.delay:
+    description: Téléportation immédiate (sans délai)
+    default: op
+  koriawarps.bypass.cooldown:
+    description: Pas de temps d'attente entre deux téléportations
+    default: op
+  koriawarps.bypass.price:
+    description: Warps payants gratuits
+    default: op

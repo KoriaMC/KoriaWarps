@@ -1,0 +1,104 @@
+{
+  "debug": false,
+  "commandes": {
+    "warp": {
+      "actif": true,
+      "nom": "warp",
+      "alias": ["w"],
+      "permission": "koriawarps.command.warp"
+    },
+    "warps": {
+      "actif": true,
+      "nom": "warps",
+      "alias": ["warplist"],
+      "permission": "koriawarps.command.warps"
+    },
+    "spawn": {
+      "actif": true,
+      "nom": "spawn",
+      "alias": ["hub", "lobby"],
+      "permission": "koriawarps.command.spawn"
+    },
+    "setwarp": {
+      "actif": true,
+      "nom": "setwarp",
+      "alias": ["createwarp"],
+      "permission": "koriawarps.admin.setwarp"
+    },
+    "delwarp": {
+      "actif": true,
+      "nom": "delwarp",
+      "alias": ["deletewarp", "removewarp"],
+      "permission": "koriawarps.admin.delwarp"
+    },
+    "editwarp": {
+      "actif": true,
+      "nom": "editwarp",
+      "alias": ["modifywarp"],
+      "permission": "koriawarps.admin.editwarp"
+    },
+    "setspawn": {
+      "actif": true,
+      "nom": "setspawn",
+      "alias": [],
+      "permission": "koriawarps.admin.setspawn"
+    },
+    "delspawn": {
+      "actif": true,
+      "nom": "delspawn",
+      "alias": ["deletespawn"],
+      "permission": "koriawarps.admin.delspawn"
+    },
+    "koriawarps": {
+      "actif": true,
+      "nom": "koriawarps",
+      "alias": ["kwarps"],
+      "permission": ""
+    }
+  },
+  "warps": {
+    "permission-par-warp": false,
+    "afficher-verrouilles": true,
+    "icone-par-defaut": "minecraft:ender_pearl"
+  },
+  "teleportation": {
+    "delai-secondes": 3,
+    "annuler-si-mouvement": true,
+    "annuler-si-degats": true,
+    "cooldown-secondes": 0,
+    "compte-a-rebours": true
+  },
+  "spawn": {
+    "par-monde": false,
+    "definir-spawn-du-monde": true,
+    "delai-sur-spawn": true,
+    "connexion": {
+      "premiere-connexion": true,
+      "chaque-connexion": false
+    },
+    "reapparition": {
+      "actif": true,
+      "ignorer-lit": false
+    },
+    "vide": {
+      "actif": false,
+      "hauteur": 0,
+      "mondes": []
+    }
+  },
+  "menu": {
+    "layout": "warps",
+    "installer-layout": true
+  },
+  "titres": {
+    "apparition": 5,
+    "duree": 40,
+    "disparition": 10
+  },
+  "sons": {
+    "teleportation": "ENDERMAN_TELEPORT:0.7:1",
+    "debut-delai": "NOTE_PLING:0.5:1.5",
+    "refus": "VILLAGER_NO",
+    "clic-menu": "CLICK:0.5:1"
+  }
+}
