@@ -2,7 +2,7 @@ name: KoriaWarps
 version: ${project.version}
 main: fr.koriamc.warps.KoriaWarps
 author: KoriaMC
-description: ${project.description}
+description: "${project.description}"
 softdepend: [Vault, KoriaMultiverse]
 
 # Les commandes (/warp, /warps, /spawn, /setwarp, /delwarp, /editwarp, /setspawn, /delspawn,
